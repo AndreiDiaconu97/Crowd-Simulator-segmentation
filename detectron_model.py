@@ -84,7 +84,7 @@ def InitCfg(trainName, testName, trained):
 	cfg.INPUT.MASK_FORMAT = "bitmask"
 	cfg.MODEL.BACKBONE.FREEZE_AT = 0
 	cfg.MODEL.DEVICE = "cuda"
-	cfg.MODEL.ROI_HEADS.BATCH_SIZE_PER_IMAGE = (128)  # faster, and good enough for this toy dataset (default: 512)
+	cfg.MODEL.ROI_HEADS.BATCH_SIZE_PER_IMAGE = (128)  # (default: 512)
 	cfg.MODEL.ROI_HEADS.NUM_CLASSES = 1  # 3 classes (data, fig, hazelnut)
 	# cfg.MODEL.ROI_HEADS.SCORE_THRESH_TEST = 0.5  # WARNING: influences evaluation!!!
 	cfg.SOLVER.BASE_LR = 0.00125  # ERROR if too big: "early training has diverged"
@@ -151,7 +151,6 @@ def main():
 
 	# cfg.MODEL.WEIGHTS = f"{OUT_DIR}/model_0014999.pth"  # can resume custom pth, but needs RESUME_CHECKPOINT=False
 	trainer = LoadTrainer(cfg, resumeTraining=RESUME_CHECKPOINT)
-
 	if DO_TRAIN:
 		trainer.train()
 		cfg.MODEL.WEIGHTS = f"{OUT_DIR}/model_final.pth"  # needed after training for visualizing predictions
