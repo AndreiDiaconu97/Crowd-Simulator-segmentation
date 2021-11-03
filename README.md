@@ -12,7 +12,9 @@ Each run contains:
 - `metrics.json`: training log
 -  NOTE: `.pth` are not shared
 
-Test datasets used are in `datasets/coco`, along to the scripts used to obtain them.
+Datasets and annotations are available from links in `datasets/link_drive.txt`
+
+- `train_compressed.7z` contains a lossy compression (.png to .jpg) of the original synthetic dataset used in the report 
 
 Scripts:
 
