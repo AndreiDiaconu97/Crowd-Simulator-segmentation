@@ -19,7 +19,7 @@ Scripts:
 - some inference examples of the trained model (images beginning with `inference_`)
 - `evaluation_result_*` for different test datasets
 - `metrics.json`: training log
--  NOTE: `.pth` are not shared
+-  NOTE: `.pth` trained models are not shared
 
 Datasets and annotations are available from links in `datasets/link_drive.txt` (need unitn mail to access drive)
 
